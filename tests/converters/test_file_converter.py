@@ -43,9 +43,7 @@ def expected_gboard_output():
     Provides the expected Gboard output as a string.
     """
     return (
-        "# Gboard Dictionary version:1\n\n"
-        "smile\t😊\ten-US\n"
-        "shrug\t¯\\_(ツ)_/¯\ten-US\n"
+        "# Gboard Dictionary version:1\n\nsmile\t😊\ten-US\nshrug\t¯\\_(ツ)_/¯\ten-US\n"
     )
 
 

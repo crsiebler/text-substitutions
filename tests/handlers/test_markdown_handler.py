@@ -9,10 +9,7 @@ def test_markdown_handler_read():
     Tests the MarkdownHandler's read method with valid markdown data.
     """
     markdown_data = (
-        "| Shortcut | Phrase |\n"
-        "|:--|:--|\n"
-        "| smile | 😊 |\n"
-        "| shrug | ¯\\_(ツ)_/¯ |\n"
+        "| Shortcut | Phrase |\n|:--|:--|\n| smile | 😊 |\n| shrug | ¯\\_(ツ)_/¯ |\n"
     )
     handler = MarkdownHandler()
     input_stream = io.StringIO(markdown_data)
@@ -48,9 +45,6 @@ def test_markdown_handler_export():
     handler.export(output_stream, entries)
 
     expected_output = (
-        "| Shortcut | Phrase |\n"
-        "|:--|:--|\n"
-        "| smile | 😊 |\n"
-        "| shrug | ¯\\_(ツ)_/¯ |\n"
+        "| Shortcut | Phrase |\n|:--|:--|\n| smile | 😊 |\n| shrug | ¯\\_(ツ)_/¯ |\n"
     )
     assert output_stream.getvalue() == expected_output

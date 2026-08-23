@@ -37,6 +37,9 @@ This tool is particularly useful for managing and migrating text substitution di
    conda activate pysubstitutor
    ```
 
+The environment installs the package and its development dependencies from
+`pyproject.toml` in editable mode.
+
 3. Install pre-commit hooks:
    ```bash
    pre-commit install
@@ -68,7 +71,9 @@ make test
 
 ### Test Coverage
 
-**Prerequisites:** Ensure that the `coverage.py` tool is installed. It is included in the `environment.yml` file for the Conda environment and the Docker image. The commands below rely on this tool to generate and view coverage reports.
+**Prerequisites:** The development dependencies declared in `pyproject.toml`
+include coverage and are installed by both `environment.yml` and the Docker
+image.
 
 To generate and view test coverage results, use the following commands:
 

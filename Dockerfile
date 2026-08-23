@@ -4,15 +4,13 @@ FROM python:3.13-alpine
 # Set the working directory in the container
 WORKDIR /app
 
-# Install the required packages
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+# Install the package and development tools used by the Makefile test targets
+COPY pyproject.toml README.md LICENSE ./
+COPY pysubstitutor/ ./pysubstitutor/
+RUN pip install --no-cache-dir ".[dev]"
 
-# Copy the application code into the container
-COPY pysubstitutor/ /app/pysubstitutor/
+# Copy application data and tests
 COPY data/ /app/data/
-
-# Copy the tests into the container
 COPY tests/ /app/tests/
 
 # Set the PYTHONPATH environment variable

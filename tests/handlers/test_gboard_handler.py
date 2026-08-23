@@ -9,9 +9,7 @@ def test_gboard_handler_read():
     Tests the GboardHandler's read method with valid Gboard data.
     """
     gboard_data = (
-        "# Gboard Dictionary version:1\n\n"
-        "smile\t😊\ten-US\n"
-        "shrug\t¯\\_(ツ)_/¯\ten-US\n"
+        "# Gboard Dictionary version:1\n\nsmile\t😊\ten-US\nshrug\t¯\\_(ツ)_/¯\ten-US\n"
     )
     handler = GboardHandler()
     input_stream = io.StringIO(gboard_data)
@@ -47,9 +45,7 @@ def test_gboard_handler_export():
     handler.export(output_stream, entries)
 
     expected_output = (
-        "# Gboard Dictionary version:1\n\n"
-        "smile\t😊\ten-US\n"
-        "shrug\t¯\\_(ツ)_/¯\ten-US\n"
+        "# Gboard Dictionary version:1\n\nsmile\t😊\ten-US\nshrug\t¯\\_(ツ)_/¯\ten-US\n"
     )
     # Normalize line endings for comparison
     assert output_stream.getvalue().replace("\r\n", "\n") == expected_output

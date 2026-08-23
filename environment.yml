@@ -1,16 +1,8 @@
 name: pysubstitutor
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.13
   - pip
-  - isort
-  - black
-  - pre-commit
-  - python-dotenv
   - pip:
-      - setuptools
-      - wheel
-      - twine
-      - -r requirements.txt
+      - -e .[dev]
